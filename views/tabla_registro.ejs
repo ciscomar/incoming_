@@ -1,0 +1,363 @@
+<%- include ("./static/header") %>
+  <%- include ("./static/sidebar") %>
+    <%- include ("./static/navbar") %>
+
+
+
+      <div class="container-fluid">
+
+        <div class="row mt-5">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <img src="/img/TristoneLogo.png" class="img-logo rounded mx-auto d-block" alt="Tristone Flowtech">
+            <h3 class="display-5 text-center  mt-1">Registro de Incoming</h3>
+            <p class="lead text-center"></p>
+          </div>
+        </div>
+      </div>
+
+
+      <td ><small id="user_id" hidden>
+        <%= user_id %>
+      </small> </td>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="table-responsive ">
+              <div class="containerTable mt-4">
+                <div class="table table-responsive" id="tabled">
+                  <table id="table" class="table table-bordered table-striped table-sm hover text-center">
+                    <thead class="thead-dark">
+
+                      <th> Registrar</th>
+                      <th> Historial</th>
+                      <th> Id</th>
+                      <th> Numero SAP</th>
+                      <th> Proveedor</th>
+                      <th> Cliente </th>
+                      <th> Plataforma</th>
+                      <th> Descripcion</th>
+                      <th> Alerta</th>
+                      <th> Periodo</th>
+                      <th> Comentario</th>
+                      <th> Estatus</th>
+
+
+
+                    </thead>
+
+                    <tbody>
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="modalfullScreen modal fade bd-example-modal-xl text-right" id="modalHistorial" tabindex="-1"
+        role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl text-right">
+          <div class="modal-content width='100%' text-right">
+            <div class="modal-body">
+              <div class="card-header">
+                <div class="col-lg-12">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarHistorial"><i
+                      class="icoSidebar fas fa-times"></i></button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header text-center d-lg-block">
+                  <div class="row">
+
+                    <div class="col-lg-12">
+                      <h4 class="card-mov"><span class="text-primary fas fa-clock-rotate-left"></span>Registro de
+                        Incoming
+                      </h4>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+
+                <div class="card-body">
+
+                  <div class="table-responsive">
+                    <div class="containerTable">
+                      <!-- /.box-header -->
+                      <div class="table table-responsive" id="table">
+                        <table id="tableHistorial" class="table table-bordered table-striped table-sm ">
+                          <thead class="thead-dark text-center">
+
+                            <th> Fecha</th>
+                            <th> Lote/Serial</th>
+                            <th> Cantidad Piezas</th>
+                            <th> Piezas OK</th>
+                            <th> Piezas NOK</th>
+                            <th> Empleado</th>
+                            <th> Comentario</th>
+                            <th> Estatus</th>
+
+
+
+                          </thead>
+
+                          <tbody class="text-center">
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+            </div>
+            <input type="text" class="form-control" name="midplan" id="midplan" aria-describedby="helpId" value=""
+              hidden>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="modalfullScreen modal fade bd-example-modal-xl" id="modalRegistrar" tabindex="-1" role="dialog"
+        aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content width='100%'">
+            <div class="modal-body">
+              <div class="card-header">
+                <div class="col-lg-12 text-right">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarRegistro"><i
+                      class="icoSidebar fas fa-times"></i></button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header text-center d-lg-block">
+                  <div class="row">
+
+                    <div class="col-lg-12">
+                      <h4 class="card-mov"><span class="text-primary fas fa-clock-rotate-left"></span>Registrar Incoming
+                      </h4>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+
+
+                <div class="row animated bounceInDown slow cdelay-1">
+                  <div class="col-2"></div>
+                  <div class="col-lg-12 text-center">
+                          <iframe id="PDF" title="PDF" src="../6.pdf" frameborder="1"
+                                  scrolling="auto" height="400" width="100%"></iframe>
+
+                  </div>
+                  <div class="col-2"></div>
+          </div>
+
+
+
+            <br>
+                  
+
+                  <div class="row">
+                    <div class="form-group col-lg-4">
+                      <label for="Titulo">Numero SAP: </label>
+                      <input type="text" class="form-control" id="sap" name="sap"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                      <label for="Titulo">Proveedor: </label>
+                      <input type="text" class="form-control" id="proveedor" name="proveedor"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="Titulo">Cliente: </label>
+                      <input type="text" class="form-control" id="cliente" name="cliente"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="row">
+
+                    <div class="form-group col-lg-4">
+                      <label for="Titulo">Plataforma: </label>
+                      <input type="text" class="form-control" id="plataforma" name="plataforma"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+                    </div>
+
+
+                    <div class="form-group col-lg-8">
+                      <label for="Titulo">Descripcion del Componente: </label>
+                      <input type="text" class="form-control" id="descripcion" name="descripcion"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+                    </div>
+
+                  </div>
+
+
+
+                  <div class="row">
+
+                    <div class="form-group col-lg-6">
+                      <label for="Titulo">Alerta Interna: </label>
+                      <input type="text" class="form-control" id="alerta" name="alerta"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+                    </div>
+
+
+                    <div class="form-group col-lg-6">
+                      <label for="Titulo">Periodo Inspeccion </label>
+                      <input type="text" class="form-control" id="periodo" name="periodo"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+                  <div class="row">
+
+
+                    <div class="form-group col-lg-12">
+                      <label for="Titulo">Comentario </label>
+                      <input type="text" class="form-control" id="comentario" name="comentario"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+
+                    </div>
+                  </div>
+
+                  
+                  <div class="row">
+
+                 
+                      <div class="form-group col-lg-6">
+                        <label for="Titulo">Razon Queja </label>
+                        <input type="text" class="form-control" name="razonqueja" id="razonqueja"
+                        aria-describedby="helpId" placeholder="" autocomplete="off" readonly>
+  
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <label for="Titulo">Numero Queja </label>
+                        <input type="text" class="form-control" id="numeroqueja" name="numeroqueja"
+                          onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" readonly>
+  
+                      </div>
+                      
+                
+                    
+                  </div>
+
+
+                  <div class="row">
+
+
+                    <div class="form-group col-lg-3">
+                      <label for="Titulo">Serial/Lote </label>
+                      <input type="text" class="form-control" id="serial" name="serial"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off">
+
+                    </div>
+
+                    <div class="form-group col-lg-3">
+                      <label for="Titulo">Piezas Totales </label>
+                      <input type="number" class="form-control" id="pzastotal" name="pzastotal"
+                         autocomplete="off">
+
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="Titulo">Piezas OK </label>
+                      <input type="number" class="form-control" id="pzasok" name="pzasok"
+                         autocomplete="off">
+
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="Titulo">Piezas NOK </label>
+                      <input type="number" class="form-control" id="pzasnok" name="pzasnok"
+                         autocomplete="off">
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-4">
+                      <label for="Titulo">Fecha </label>
+                      <input type="text" class="form-control text-center" name="date" id="fecha_registro"
+                      aria-describedby="helpId" placeholder="" autocomplete="off">
+
+                    </div>
+                    <div class="form-group col-lg-8">
+                      <label for="Titulo">Comentario Registro </label>
+                      <input type="text" class="form-control" id="comentarioreg" name="comentarioreg"
+                        onkeyup="this.value = this.value.toUpperCase();" autocomplete="off">
+
+                    </div>
+                    
+                  </div>
+
+
+
+                  <button type="button" class="btn btn-success mt-2 col-lg-12" id="btnCapturarRegistro"><span><span>Guardar</span></span>
+
+
+
+
+
+
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+            </div>
+            <input type="text" class="form-control" name="midplan" id="midplan" aria-describedby="helpId" value=""
+              hidden>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <%- include ("./static/guia") %>
+
+      <%- include ("./static/footer") %>
+        <script type="text/javascript" src="/js/functions/tabla_registro.js"></script>

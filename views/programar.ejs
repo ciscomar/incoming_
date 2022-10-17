@@ -1,0 +1,144 @@
+<%- include ("./static/header") %>
+    <%- include ("./static/sidebar") %>
+        <%- include ("./static/navbar") %>
+
+
+        <div class="container-fluid">
+       <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-center">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                        <br>
+                    <h3 class="box-title mb-3">Programar Inspeccion</h3>
+                </div>
+
+
+                <div class="alert alert-danger animate__flipOutX animate__animated role=" alert" id="alerta_prefijo">
+                    
+                  </div>
+                
+                  <form action="/" method="POST" enctype="multipart/form-data">
+                    <div class="box-body">
+                    
+                        <div class="row">
+                            <div class="form-group col-lg-4">
+                                <label for="Titulo">Numero SAP: </label>
+                                <input type="text" class="form-control" id="sap"  name="sap" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off">
+                            </div>
+        
+                            <div class="form-group col-lg-4">
+                                <label for="Titulo">Proveedor: </label>
+                                <input type="text" class="form-control" id="proveedor"  name="proveedor" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off">
+                               
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="Titulo">Cliente: </label>
+                                <input type="text" class="form-control" id="cliente"  name="cliente" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off">
+                             
+                            </div>
+        
+                        </div>
+
+
+                        <div class="row">
+                          
+                            <div class="form-group col-lg-4">
+                                <label for="Titulo">Plataforma: </label>
+                                <input type="text" class="form-control" id="plataforma"  name="plataforma" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off">
+                            </div>
+                       
+
+                            <div class="form-group col-lg-8">
+                                <label for="Titulo">Descripcion del Componente: </label>
+                                <input type="text" class="form-control" id="descripcion"  name="descripcion" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" >
+                            </div>
+               
+                        </div>
+
+
+                                                
+                        <div class="row">
+
+                            <div class="form-group col-lg-6">
+                                <label for="Titulo">Alerta Interna: </label>
+                                <input type="text" class="form-control" id="alerta"  name="alerta" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" >
+                            </div>
+
+
+                            <div class="form-group col-lg-6">
+                                <label for="Titulo">Periodo Inspeccion </label>
+                                <input type="text" class="form-control" id="periodo"  name="periodo" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" >
+                            </div>
+
+
+                          
+                            
+                        </div>
+
+
+
+
+ 
+
+                        <div class="row">
+                            
+        
+                            <div class="form-group col-lg-12">
+                                <label for="Titulo">Comentario </label>
+                                <input type="text" class="form-control" id="comentario"  name="comentario" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" >
+        
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="form-group col-lg-6">
+                                <label for="Titulo">Razon Queja: </label>
+                                <input type="text" class="form-control" id="razonqueja"  name="razonqueja" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" >
+                            </div>
+
+
+                            <div class="form-group col-lg-6">
+                                <label for="Titulo">Numero Queja: </label>
+                                <input type="text" class="form-control" id="numeroqueja"  name="numeroqueja" onkeyup="this.value = this.value.toUpperCase();" autocomplete="off" >
+                            </div>
+
+                            
+                        </div>
+
+
+                 
+                            <div class="row text-center">
+                                <div class="form-group col-lg-12">
+                                    <input type="file" id="fileUploader" name="fileUploader" accept="application/pdf" required />
+            
+                                </div>
+                            </div>
+
+                            <div class="box-footer">
+                                <button id="btnguardar" type="submit" class="btn btn-success  col-lg-12"
+                                    onclick="$('form').attr('action', '/insertPrograma');">Guardar</button>
+                            </div>
+                        </form>
+     
+
+
+
+
+                        <!-- <button type="button" class="btn btn-success mt-2 col-lg-12" id="btnCapturar"><span><span>Guardar</span></span> -->
+            
+            </div>
+            <!-- /.box -->
+        
+
+        </div>
+        
+       </div>
+
+    </div>
+
+
+        <%- include ("./static/footer") %>
+        <script type="text/javascript" src="/js/functions/programar.js"></script>

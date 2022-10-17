@@ -1,0 +1,79 @@
+<%- include ("./static/header") %>
+    <%- include ("./static/sidebar") %>
+        <%- include ("./static/navbar") %>
+
+
+
+            <div class="container-fluid">
+
+                <div class="row mt-5">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <img src="/img/TristoneLogo.png" class="img-logo rounded mx-auto d-block"
+                            alt="Tristone Flowtech">
+                        <h3 class="display-5 text-center  mt-1">Correos Notificar</h3>
+                        <p class="lead text-center"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+
+                    <div class="col-lg-12">
+                        <label for="Titulo">Correo: </label>
+                        <select class="form-control" name="correo" id="correo">
+                        </select>
+
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-success mt-2 col-lg-12"
+                            id="btnCapturar"><span><span>Guardar</span></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+
+
+                        <div class="table-responsive ">
+                            <div class="containerTable mt-4">
+                                <div class="table table-responsive" id="tabled">
+                                    <table id="table"
+                                        class="table table-bordered table-striped table-sm hover text-center">
+                                        <thead class="thead-dark">
+                                            <th> Eliminar</th>
+                                            <th> Correo</th>
+                                        </thead>
+
+                                        <tbody>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <%- include ("./static/footer") %>
+                <script type="text/javascript" src="/js/functions/notificar.js"></script>
