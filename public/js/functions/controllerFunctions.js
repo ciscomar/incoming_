@@ -194,11 +194,12 @@ funcion.getUsers = (user) => {
     return new Promise((resolve, reject) => {
         dbE(`
         SELECT 
-            emp_name
+            acc_id
         FROM
-            empleados
+            del_accesos
         WHERE
-            emp_num = ${user}
+            acc_id = ${user}
+            AND  acc_calidad >= 3
        
         `)
             .then((result) => { resolve(result) })
